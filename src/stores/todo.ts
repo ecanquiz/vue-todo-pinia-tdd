@@ -32,9 +32,8 @@ const getters = {
     return state.items.find((item: Todo) => item.id === id)
   },
   getOrderedTodos: (state: TodoState) =>
-    state.items.sort(
-      (a: Todo, b: Todo) =>
-        a.createAt.getMilliseconds() - b.createAt.getMilliseconds()
+    [...state.items].sort(
+      (a: Todo, b: Todo) => a.createdAt.getTime() - b.createdAt.getTime()     
     ),
 }
 
@@ -53,11 +52,18 @@ const actions = {
     this.items = this.items.filter(item => item.id !== id)
   },
   update(this:any, id: string, update: TodoUpdate) {
-    this.items = this.items.map(item => 
+    /*this.items = this.items.map(item => 
       item.id === id
         ? { ...item, ...update, updateAt: new Date() }
           : item
-    )
+    )*/
+    const index = 
+    this.items.findIndex(item => item.id === id)
+    this.items[index] = {
+      ...this.items[index],
+      ...update,
+      updateAt: new Date()
+    }
   }
 }
 
