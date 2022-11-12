@@ -12,7 +12,7 @@ const getters = {
   },
   getOrderedTodos: (state: TodoState) =>
     [...state.items].sort(
-      (a: Todo, b: Todo) => a.createAt.getTime() - b.createAt.getTime()     
+      (a: Todo, b: Todo) => a.createdAt.getTime() - b.createdAt.getTime()     
     ),
 }
 
@@ -22,8 +22,8 @@ const actions = {
       id: uuid(),
       ...partialTodo,
       done: false,
-      createAt: new Date(),
-      updateAt: new Date()
+      createdAt: new Date(),
+      updatedAt: new Date()
     }
     this.items.push(todo)
   },
@@ -35,7 +35,7 @@ const actions = {
     this.items[index] = {
       ...this.items[index],
       ...update,
-      updateAt: new Date()
+      updatedAt: new Date()
     }
   }
 }
