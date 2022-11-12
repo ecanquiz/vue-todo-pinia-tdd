@@ -76,10 +76,7 @@ describe("useTodoStore", () => {
     store.update(todo.id, {done: true})
     const updated = store.items[0]
 
-    expect(updated.done).toBe(true)    
-
+    expect(updated.done).toBe(true)
   })
-
-
 })
 
