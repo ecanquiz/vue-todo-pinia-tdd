@@ -9,17 +9,12 @@ export interface Todo {
 export interface TodoAdd{
   title: string;
 }
-  
+
+export interface TodoState {    
+  items: Todo[];
+}
+
 export interface TodoUpdate{
   title?: string;
   done?: boolean;
 }
-  
-//export type Todos = Todo[] //| undefined[];
-  
-export interface TodoState {
-  //items: Todos //| undefined[]  
-  items: Todo[] //| undefined[]  
-
-}
-

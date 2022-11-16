@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { v4 as uuid } from "uuid";
-import type {Todo, TodoAdd, TodoUpdate, TodoState} from "../types"
+import type { Todo, TodoAdd, TodoState, TodoUpdate } from "../types/todo"
 
 const state = (): TodoState => ({
   items: []
@@ -13,7 +13,7 @@ const getters = {
   getOrderedTodos: (state: TodoState) =>
     [...state.items].sort(
       (a: Todo, b: Todo) => a.createdAt.getTime() - b.createdAt.getTime()     
-    ),
+    )
 }
 
 const actions = {
