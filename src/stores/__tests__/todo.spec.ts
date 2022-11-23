@@ -25,7 +25,7 @@ describe("useTodoStore", () => {
     expect(store.items).toStrictEqual([])
   })
 
-  /*it("should creates a todo", () => {
+  it("should creates a todo", () => {
     store.add({title: 'Test my code!'})
 
     expect(store.items[0]).toBeDefined()
@@ -77,5 +77,5 @@ describe("useTodoStore", () => {
     const updated = store.items[0]
 
     expect(updated.done).toBe(true)
-  })*/
+  })
 })
